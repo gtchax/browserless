@@ -1,0 +1,43 @@
+# Dependencies
+node_modules
+
+# Build output (will be rebuilt in container)
+build
+
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test files
+*.spec.ts
+*.spec.js
+coverage
+.nyc_output
+
+# Development files
+.env
+.env.*
+!.env.example
+
+# Documentation
+docs
+*.md
+!README.md
+!CHANGELOG.md
+
+# Docker files for other platforms (keep main Dockerfile)
+docker/
