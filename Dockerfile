@@ -110,7 +110,11 @@ RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula sele
   fonts-open-sans || true
 
 # Install Chrome with dependencies
-RUN ./node_modules/playwright-core/cli.js install --with-deps chrome && \
+RUN if [ "$(uname -m)" = "aarch64" ]; then \
+    ./node_modules/playwright-core/cli.js install --with-deps chromium; \
+  else \
+    ./node_modules/playwright-core/cli.js install --with-deps chrome; \
+  fi && \
   npm run build && \
   npm run build:function && \
   npm prune production && \
