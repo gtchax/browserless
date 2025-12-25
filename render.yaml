@@ -1,10 +1,10 @@
 services:
   - type: web
     name: browserless
-    runtime: node
+    runtime: docker
     plan: standard  # Requires at least standard for Chrome memory
-    buildCommand: npm install && npx playwright-core install --with-deps chrome && npm run build
-    startCommand: npm run start:prod
+    dockerfilePath: ./Dockerfile.render
+    dockerContext: .
     envVars:
       - key: NODE_ENV
         value: production
