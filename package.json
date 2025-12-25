@@ -33,7 +33,8 @@
     "prettier": "prettier '{src,functions,scripts,bin,external,.github}/**/*.{js,ts,json,yml,yaml,md}' --log-level error --write",
     "test": "npm run build:tests && cross-env DEBUG=quiet mocha",
     "coverage": "npm run build:ts && c8 --reporter=text --reporter=html --reporter=lcov cross-env DEBUG=quiet mocha",
-    "start": "env-cmd -f .env node build"
+    "start": "env-cmd -f .env node build",
+    "start:prod": "node build"
   },
   "files": [
     "assets/*",
